@@ -9,6 +9,7 @@
 *
 * Return: 1 if the string is a palindrome, 0 otherwise.
 */
+
 int is_palindrome_recursive(char *s, int start, int end)
 {
 if (start >= end)
@@ -36,7 +37,7 @@ int length = strlen(s);
 
 if (length <= 1)
 {
-return (1); /* Empty string or single-character string is a palindrome. */
+return (1); /* Empty string or single-character string is a palindrome.*/
 }
 
 return (is_palindrome_recursive(s, 0, (length - 1)));
