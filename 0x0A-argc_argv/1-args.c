@@ -9,9 +9,9 @@
  * Return: zero
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-(viod) argv;
-printf("%d\n", argc - 1);
+(void)argv;
+printf("%d\n", argc);
 return(0);
 }
