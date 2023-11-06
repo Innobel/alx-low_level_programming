@@ -1,1 +1,2 @@
-Read me file for more of how to use malloc function and free function
+Read me file for structure and typedef project
+
