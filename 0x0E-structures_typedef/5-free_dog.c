@@ -4,7 +4,7 @@
 /**
  * free_dog - Frees the allocated memory to d.
  * @d: typedef data type
- * 
+ *
  * Return: void.
  */
 void free_dog(dog_t *d)
