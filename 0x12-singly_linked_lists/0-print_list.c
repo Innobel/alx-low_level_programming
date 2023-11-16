@@ -1,5 +1,7 @@
 #include "lists.h"
 #include "stdio.h"
+
+int _strlen(char *s);
 /**
  * print_list - Prints all element in list
  * @h: pointer to linked list
@@ -31,4 +33,23 @@ size_t print_list(const list_t *h)
 	}
 
 	return (no_of_nodes);
+}
+
+/**
+ * _strlen - calculate the len of a string.
+ * @s: character pointer.
+ * Return: len
+ */
+
+int _strlen(char *s)
+{
+	int len = 0, i = 0;
+
+	while (s[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+
+	return (len);
 }
