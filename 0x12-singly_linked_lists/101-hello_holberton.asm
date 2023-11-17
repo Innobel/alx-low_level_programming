@@ -1,5 +1,3 @@
-format: db "Hello, Holberton", 0xA
-
 global	main
 	extern printf
 
@@ -8,4 +6,6 @@ main:
 	xor eax, eax
 	call printf
 	mov eax, 0
-	ret	
+	ret
+
+	format: db "Hello, Holberton", 0xA
