@@ -13,7 +13,7 @@ while (current != NULL)
 {
 next_node = current->next;
 free(current);
-cucurrent = next_node;
+current = next_node;
 }
 }
 
