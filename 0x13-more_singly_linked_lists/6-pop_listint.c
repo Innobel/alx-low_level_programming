@@ -14,8 +14,7 @@ int data;
 if (head == NULL || *head == NULL)
 return (0);
 
-temp = *head;
-*head = (*head)->next;
+temp = (*head)->next;
 
 /*
 * Check if the new head node exists.
@@ -25,11 +24,10 @@ temp = *head;
 */
 if (*head != NULL) {
 data = (*head)->n;
-free(temp);
-temp = NULL;
+free(*head);
+*head = temp;
 } else {
-data = temp->n;
-free(temp);
+free(*head);
 *head = NULL;  /* Update head to NULL since the list is now empty */
 }
 
