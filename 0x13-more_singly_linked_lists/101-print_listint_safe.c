@@ -29,7 +29,7 @@ size_t looped_listint_len(const listint_t *head)
 			{
 				nodes++;
 				slow = slow->next;
-				fast =fast->next;
+				fast = fast->next;
 			}
 
 			slow = slow->next;
