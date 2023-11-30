@@ -16,7 +16,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	/* Check if filename or text_conteent is NULL */
 	if (filename == NULL)
-	       	return (-1);
+		return (-1);
 
 	/* Open the file in read_write mode and append mode */
 	fd = open(filename, O_RDWR | O_APPEND);
