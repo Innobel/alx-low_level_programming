@@ -11,16 +11,15 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, nwrite;
-	/* Change the mode of the file to rw-rw-r-- */
-	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	int fd;
+	ssize_t nwrite;
 
 	/* Check if filename or text_conteent is NULL */
 	if (filename == NULL || text_content == NULL)
 		return (-1);
 
 	/* Open the file in read_write mode and append mode */
-	fd = open(filename, O_RDWR | O_APPEND, mode);
+	fd = open(filename, O_RDWR | O_APPEND);
 
 	/* check if file was opened successfully */
 	if (fd == -1)
@@ -35,14 +34,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		close(fd); /* close if there is an error */
 		return (-1);
 	}
-
-	/* Checks if No byte was written */
-	if (nwrite == 0)
-	{
-		close(fd); /* close if no byte was written */
-		return (1); /* return successful */
-	}
-
+	
 	close(fd); /* close if the file was successuflly appended */
 
 	return (1); /* return 1 to indicate success */
