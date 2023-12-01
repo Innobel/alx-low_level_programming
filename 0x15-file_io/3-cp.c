@@ -36,12 +36,12 @@ int main(int argc, char *argv[])
 		{ dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		close(fd_from);
 		close(fd_to);
-		exit(98); } }
+		exit(99); } }
 	if (nread == -1)
 	{ dprintf(STDERR_FILENO, "Error: Can't read from  %s\n", argv[1]);
 		close(fd_from);
 		close(fd_to);
-		exit(99); }
+		exit(98); }
 	if (close(fd_from) == -1)
 	{ dprintf(STDERR_FILENO, "Error: Can't close fd fd_from\n");
 		exit(100); }
