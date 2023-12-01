@@ -8,8 +8,7 @@
  */
 
 int main(int argc, char *argv[])
-{
-	int fd_from, fd_to;
+{ int fd_from, fd_to;
 	const char *file_from = argv[1];
 	const char *file_to = argv[2];
 	char buffer[BUFFER_SIZE];
@@ -24,7 +23,9 @@ int main(int argc, char *argv[])
 	if (fd_to == -1)
 	{ dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 		exit(99); }
-
+	if (access(file_to, W_OK) == -1)
+	{ close(fd_to);
+		exit(99); }
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 	{ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
